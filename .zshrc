@@ -1,5 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
+    tmux attach -t default || tmux new -s default
+fi
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/hej/.oh-my-zsh"
@@ -77,7 +80,9 @@ prompt_context() {
 plugins=(
     autojump        
     git
+    common-aliases
     rsync
+    tmux
 )
 # common alias
 
