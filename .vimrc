@@ -20,8 +20,10 @@ endif
 
 "Settings
 set shell=/usr/bin/zsh
-set tabstop=4
-set expandtab
+"set autoindent
+set autoindent noexpandtab tabstop=4 shiftwidth=4
+"set tabstop=4
+"set expandtab
 set noswapfile
 set showcmd
 
@@ -31,6 +33,12 @@ let maplocalleader = "\\"
 "Remap the key jj for ESC in insert mode
 
 imap jj <Esc>
+inoremap <C-s> <ESC>:w<CR>
+nnoremap <C-s> <ESC>:w<CR>
+vnoremap <C-s> <ESC>:w<CR>
+
+set list
+set listchars=eol:¬,tab:▸\
 
 " ###########################################
 " Personal LATEX Shortcuts
